@@ -1,12 +1,14 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { ChatMessage } from '@/lib/prompts/conditions';
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY ?? '');
-
 export async function callGemini(
   system: string,
   messages: ChatMessage[]
 ): Promise<string> {
+  const apiKey = process.env.GOOGLE_API_KEY;
+  if (!apiKey) throw new Error('GOOGLE_API_KEY is not set');
+
+  const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: 'gemini-2.5-flash',
     systemInstruction: system,
