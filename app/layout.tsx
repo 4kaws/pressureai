@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Calibrate — Pressure-test your AI agent',
+  title: 'Pressure — See how your AI agent breaks under pressure',
   description: 'Research-backed eval for AI agent sycophancy under social pressure.',
 };
 

@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# agent context files
+CLAUDE.md
+AGENTS.md
+PROGRESS.md
+
+# data — CSVs published to HF, only results.json is tracked
+data/*.csv
